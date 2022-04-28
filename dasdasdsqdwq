@@ -1,0 +1,93 @@
+[33mcommit 1624789fb9ebe3f808cdfd595a8ce95318845023[m[33m ([m[1;36mHEAD -> [m[1;32mdev[m[33m)[m
+Merge: 0914ba1 1195477
+Author: Mizulatte <91464005+Mizulatte@users.noreply.github.com>
+Date:   Wed Apr 27 16:35:43 2022 +0900
+
+    Merge pull request #59 from Mizulatte/dev
+    
+    [FIX] 프로필 조회 에러 수정
+
+[33mcommit 1195477e3901819005fb34db5e8c8624345fd54b[m
+Merge: 00578d8 3166120
+Author: Mizulatte <rainbow5284@gmail.com>
+Date:   Wed Apr 27 16:33:35 2022 +0900
+
+    [FIX] 프로필 조회 에러 수정
+
+[33mcommit 0914ba177d3d4dca0985ae1a16be280ebfae9e68[m
+Merge: 3166120 95599ba
+Author: chunwoolee-work <96035912+chunwoolee-work@users.noreply.github.com>
+Date:   Wed Apr 27 16:20:55 2022 +0900
+
+    Merge pull request #58 from chunwoolee-work/main
+    
+    [ADD] server 페이지별 게시글 가져오는 기능 추가
+
+[33mcommit 95599ba4ef2d885e9016dc5b930a65bf8721cd21[m
+Author: lee chun woo <chunwoolee.work@gmail.com>
+Date:   Wed Apr 27 16:20:16 2022 +0900
+
+    [FIX] server 랭킹 api에서 limit를 0값으로 넣었을 때 오류 수정
+
+[33mcommit b3b15fc468bfdd8c2571bb7dbea7fac816dd23ac[m
+Author: lee chun woo <chunwoolee.work@gmail.com>
+Date:   Wed Apr 27 16:18:30 2022 +0900
+
+    [ADD] server 페이지별 게시글 가져오는 기능 추가
+
+[33mcommit 00578d8b47edba92d2a18ea595de9272035a7e06[m
+Author: Mizulatte <rainbow5284@gmail.com>
+Date:   Wed Apr 27 15:31:36 2022 +0900
+
+    [ADD] 타인 프로필 조회 추가
+
+[33mcommit 31661205bf117ad365ec4fe14ccb58037e901e16[m
+Merge: fae11de c7a8450
+Author: chunwoolee-work <96035912+chunwoolee-work@users.noreply.github.com>
+Date:   Wed Apr 27 15:29:53 2022 +0900
+
+    Merge pull request #56 from chunwoolee-work/main
+    
+    [ADD] server 댓글 조회 기능 추가
+
+[33mcommit c7a84503e55d4c00522e635cf5254182916afc84[m
+Author: lee chun woo <chunwoolee.work@gmail.com>
+Date:   Wed Apr 27 15:28:57 2022 +0900
+
+    [ADD] server 댓글 조회 기능 추가
+
+[33mcommit fae11deb67177ca49d910285702015f553ba8ad5[m
+Merge: 3e8bde7 c29f9c2
+Author: chunwoolee-work <96035912+chunwoolee-work@users.noreply.github.com>
+Date:   Wed Apr 27 14:52:40 2022 +0900
+
+    Merge pull request #55 from chunwoolee-work/main
+    
+    [ADD] server 랭킹 api 추가
+
+[33mcommit c29f9c2ca332462629e9a1dfd3547cfbca829ec0[m
+Author: lee chun woo <chunwoolee.work@gmail.com>
+Date:   Wed Apr 27 14:48:20 2022 +0900
+
+    [ADD] server 랭킹 api 추가
+
+[33mcommit 3e8bde7a0afab5fb044e4d1a385bffb18233a083[m
+Merge: 4101f68 582bfc3
+Author: haheon <haheon2002@naver.com>
+Date:   Wed Apr 27 14:31:00 2022 +0900
+
+    Merge branch 'main' of github.com:codestates/whoseidea
+
+[33mcommit 4101f68bc93f3cd1a16a8d89709db8b372bdb31c[m
+Merge: faba3e7 a28667c
+Author: haheon <haheon2002@naver.com>
+Date:   Wed Apr 27 14:30:01 2022 +0900
+
+    [add]회원가입
+
+[33mcommit faba3e77626fad445b625ecdcd11469c5d6f4206[m
+Merge: 5b515fa e42c906
+Author: haheon <haheon2002@naver.com>
+Date:   Wed Apr 27 14:27:21 2022 +0900
+
+    [add]회원가입
