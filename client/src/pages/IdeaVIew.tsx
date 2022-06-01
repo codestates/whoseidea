@@ -120,7 +120,7 @@ const View = styled.div`
 `;
 const View1 = styled.div`
   position: absolute;
-  left: 330px;
+  left: 350px;
   top: 1472px;
   width: 250px;
   font-size: 20px;

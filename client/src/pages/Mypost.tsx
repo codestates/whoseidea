@@ -112,7 +112,7 @@ const Writer = styled.div`
   align-items: center;
   text-align: center;
   letter-spacing: 0.1px;
-  color: #5d449d;
+  color: #eceef3;
   /* Inside auto layout */
   flex: none;
   order: 0;
@@ -124,21 +124,7 @@ const Data = styled.div`
   position: absolute;
   top: 40%;
   left: 20%;
-  display: flex;
-  flex-direction: row;
-  justify-content: left;
-  align-items: center;
-  padding: 8px 24px;
-  gap: 8px;
-  border-radius: 100px;
-  width: 150px;
-  height: 40px;
-  margin-top: 20px;
-  border-radius: 1px solid black;
-  background: #eceef3;
-  /* Inside auto layout */
-  flex: none;
-  order: 0;
+  border: 0;
   align-self: stretch;
   flex-grow: 1;
   width: 320px;
@@ -163,10 +149,8 @@ const Data = styled.div`
 `;
 const OnlyData = styled.div`
   position: absolute;
-  top: 62%;
-  left: 10%;
-  margin-top: 30px;
-  margin-bottom: 30px;
+  top: 56%;
+  left: 12%;
   display: flex;
   flex-direction: row;
   justify-content: left;
@@ -174,38 +158,35 @@ const OnlyData = styled.div`
   padding: 8px 24px;
   gap: 8px;
   border-radius: 100px;
-  width: 400px;
-  height: 50px;
-  margin-top: 20px;
+  width: 80px;
+  height: 40px;
+  margin-top: 10px;
   border-radius: 1px solid black;
-  background: #eceef3;
-  z-index: 30;
+  background: #0d3470;
   /* Inside auto layout */
   flex: none;
   order: 0;
   align-self: stretch;
   flex-grow: 1;
-  width: 300px;
-  height: 40px;
-  margin-left: 20%20px;
+  width: 320px;
+  height: 50px;
   font-family: 'Roboto';
   font-style: normal;
   font-weight: 700;
-  font-size: 25px;
-  line-height: 50px;
+  font-size: 30px;
+  line-height: 20px;
   /* identical to box height, or 100% */
   display: flex;
   align-items: center;
   text-align: center;
   letter-spacing: 0.1px;
-  color: #5d449d;
+  color: #eceef3;
   /* Inside auto layout */
   flex: none;
   order: 0;
   flex-grow: 0;
   border-radius: 1px solid black;
   text-decoration: none;
-  z-index: 10;
 `;
 
 export default function Mypost({ postData }: any) {
