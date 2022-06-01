@@ -68,7 +68,7 @@ const Bodytext = styled.div`
   width: 400px;
   height: 72px;
   left: 220px;
-  top: 200px;
+  top: 150px;
   font-family: 'Roboto';
   font-style: normal;
   font-weight: 700;
@@ -80,42 +80,132 @@ const Bodytext = styled.div`
   color: #000000;
 `;
 const Writer = styled.div`
-  box-sizing: border-box;
   position: absolute;
-  width: 590px;
-  height: 100px;
-  background: #0d3470;
-  border: 1px solid #000000;
-  border-radius: 20px;
-  box-sizing: border-box;
-  position: absolute;
-  width: 93.33px;
-  height: 79.01px;
-  background: #ffffff;
-  border: 1px solid #000000;
+  top: 30%;
+  left: 26%;
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  align-items: center;
+  padding: 8px 24px;
+  gap: 8px;
+  border-radius: 100px;
+  width: 80px;
+  height: 40px;
+  margin-top: 20px;
+  border-radius: 1px solid black;
+  background: #eceef3;
+  /* Inside auto layout */
+  flex: none;
+  order: 0;
+  align-self: stretch;
+  flex-grow: 1;
+  width: 320px;
+  height: 50px;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 25px;
+  line-height: 20px;
+  /* identical to box height, or 100% */
+  display: flex;
+  align-items: center;
+  text-align: center;
+  letter-spacing: 0.1px;
+  color: #5d449d;
+  /* Inside auto layout */
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+  border-radius: 1px solid black;
+  text-decoration: none;
 `;
 const Data = styled.div`
-  position: relative;
-  top: 170px;
+  position: absolute;
+  top: 40%;
   left: 20%;
-  font-weight: bold;
-  font-family: sans-serif;
-  font-size: xx-large;
-
-  & a {
-    color: #f00101;
-    text-decoration: none;
-  }
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  align-items: center;
+  padding: 8px 24px;
+  gap: 8px;
+  border-radius: 100px;
+  width: 150px;
+  height: 40px;
+  margin-top: 20px;
+  border-radius: 1px solid black;
+  background: #eceef3;
+  /* Inside auto layout */
+  flex: none;
+  order: 0;
+  align-self: stretch;
+  flex-grow: 1;
+  width: 320px;
+  height: 50px;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 25px;
+  line-height: 20px;
+  /* identical to box height, or 100% */
+  display: flex;
+  align-items: center;
+  text-align: center;
+  letter-spacing: 0.1px;
+  color: #5d449d;
+  /* Inside auto layout */
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+  border-radius: 1px solid black;
+  text-decoration: none;
 `;
-
 const OnlyData = styled.div`
-  :hover {
-    background-color: yellow;
-    transition: 0.5s;
-    width: 500px;
-    color: Black;
-    cursor: pointer;
-  }
+  position: absolute;
+  top: 62%;
+  left: 10%;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  align-items: center;
+  padding: 8px 24px;
+  gap: 8px;
+  border-radius: 100px;
+  width: 400px;
+  height: 50px;
+  margin-top: 20px;
+  border-radius: 1px solid black;
+  background: #eceef3;
+  z-index: 30;
+  /* Inside auto layout */
+  flex: none;
+  order: 0;
+  align-self: stretch;
+  flex-grow: 1;
+  width: 300px;
+  height: 40px;
+  margin-left: 20%20px;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 25px;
+  line-height: 50px;
+  /* identical to box height, or 100% */
+  display: flex;
+  align-items: center;
+  text-align: center;
+  letter-spacing: 0.1px;
+  color: #5d449d;
+  /* Inside auto layout */
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+  border-radius: 1px solid black;
+  text-decoration: none;
+  z-index: 10;
 `;
 
 export default function Mypost({ postData }: any) {
@@ -139,14 +229,16 @@ export default function Mypost({ postData }: any) {
           {postData === null || postData.data.length === 0 ? null : (
             <div>
               <Writer>
-                <div>작성자 : {postData.data[0].nickname}</div>
+                <img src="frame.png" />
+                <div> 작성자 : {postData.data[0].nickname}</div>
               </Writer>
               <Data>
                 <div>
-                  {postData.data.map((el: any) => (
+                  {postData.data.map((el: any, index: number) => (
                     <Link to={`/ideaview/${el.id}`}>
                       <OnlyData>
-                        <div>{el.caption}</div>
+                        <img src="frame.png" />
+                        <div className={`postNum${index}`}>{el.caption}</div>
                       </OnlyData>
                     </Link>
                   ))}

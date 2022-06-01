@@ -118,6 +118,13 @@ const View = styled.div`
   width: 250px;
   font-size: 20px;
 `;
+const View1 = styled.div`
+  position: absolute;
+  left: 330px;
+  top: 1472px;
+  width: 250px;
+  font-size: 20px;
+`;
 const Like = styled.div`
   position: absolute;
   top: 1450px;
@@ -360,6 +367,7 @@ export default function IdeaView({ handleIdeaView, usernickname }: UserProps) {
     context: '',
   });
   const [allComment, setallComment] = useState<any[]>([]);
+  const [createdAt, setCreatedAt] = useState('');
 
   useEffect(() => {
     axios.get(`https://whoseidea.ml:8080/post/view?postId=${id}`).then(data => {
@@ -369,6 +377,7 @@ export default function IdeaView({ handleIdeaView, usernickname }: UserProps) {
       setCaption(data.data.data[0].caption);
       setContext(data.data.data[0].context);
       setNickname(data.data.data[0].nickname);
+      setCreatedAt(data.data.data[0].createdAt);
     });
 
     axios
@@ -448,6 +457,9 @@ export default function IdeaView({ handleIdeaView, usernickname }: UserProps) {
             <View>
               <span>조회수 : {view}</span>
             </View>
+            <View1>
+              <span> 작성일 : {createdAt}</span>
+            </View1>
             <Like>
               <div>
                 {isHeart ? (
