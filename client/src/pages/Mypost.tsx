@@ -25,7 +25,7 @@ const Title = styled.div`
   position: absolute;
   width: 500px;
   height: 72px;
-  left: 50%;
+  left: 70%;
   top: 30px;
   font-family: 'Roboto';
   font-style: normal;
@@ -67,7 +67,7 @@ const Bodytext = styled.div`
   position: absolute;
   width: 400px;
   height: 72px;
-  left: 220px;
+  left: 225px;
   top: 150px;
   font-family: 'Roboto';
   font-style: normal;
@@ -94,7 +94,7 @@ const Writer = styled.div`
   height: 40px;
   margin-top: 20px;
   border-radius: 1px solid black;
-  background: #eceef3;
+  background: #0d3470;
   /* Inside auto layout */
   flex: none;
   order: 0;
@@ -122,71 +122,34 @@ const Writer = styled.div`
 `;
 const Data = styled.div`
   position: absolute;
-  top: 40%;
-  left: 20%;
-  border: 0;
-  align-self: stretch;
-  flex-grow: 1;
-  width: 320px;
-  height: 50px;
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 700;
-  font-size: 25px;
-  line-height: 20px;
-  /* identical to box height, or 100% */
-  display: flex;
+  top: 42%;
+  left: 15%;
+  width: 500px;
+  font-weight: bold;
+  font-family: sans-serif;
+  font-size: xx-large;
+  line-height: 50px;
+  background-color: #0d3470;
+  padding: 8px 24px;
+  margin-top: 20px;
+  border-radius: 20px;
+  text-align: left;
   align-items: center;
-  text-align: center;
-  letter-spacing: 0.1px;
-  color: #5d449d;
-  /* Inside auto layout */
-  flex: none;
-  order: 0;
-  flex-grow: 0;
-  border-radius: 1px solid black;
-  text-decoration: none;
-`;
-const OnlyData = styled.div`
-  position: absolute;
-  top: 56%;
-  left: 12%;
   display: flex;
   flex-direction: row;
-  justify-content: left;
-  align-items: center;
-  padding: 8px 24px;
-  gap: 8px;
-  border-radius: 100px;
-  width: 80px;
-  height: 40px;
-  margin-top: 10px;
-  border-radius: 1px solid black;
-  background: #0d3470;
-  /* Inside auto layout */
-  flex: none;
-  order: 0;
-  align-self: stretch;
-  flex-grow: 1;
-  width: 320px;
-  height: 50px;
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 700;
-  font-size: 30px;
-  line-height: 20px;
-  /* identical to box height, or 100% */
-  display: flex;
-  align-items: center;
-  text-align: center;
-  letter-spacing: 0.1px;
-  color: #eceef3;
-  /* Inside auto layout */
-  flex: none;
-  order: 0;
-  flex-grow: 0;
-  border-radius: 1px solid black;
-  text-decoration: none;
+  & a {
+    color: #ffffff;
+    text-decoration: none;
+  }
+`;
+const OnlyData = styled.div`
+  :hover {
+    background-color: #eceef3;
+    transition: 0.5s;
+    width: 450px;
+    color: #5d449d;
+    cursor: pointer;
+  }
 `;
 
 export default function Mypost({ postData }: any) {
@@ -215,11 +178,11 @@ export default function Mypost({ postData }: any) {
               </Writer>
               <Data>
                 <div>
-                  {postData.data.map((el: any, index: number) => (
+                  {postData.data.map((el: any) => (
                     <Link to={`/ideaview/${el.id}`}>
                       <OnlyData>
-                        <img src="frame.png" />
-                        <div className={`postNum${index}`}>{el.caption}</div>
+                        {/* <img src="frame.png" /> */}
+                        <div>{el.caption}</div>
                       </OnlyData>
                     </Link>
                   ))}
