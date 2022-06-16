@@ -30,35 +30,43 @@ const MainStyle = styled.div`
   display: flex;
   height: 500px;
   justify-content: space-between;
-  margin-top: 50px;
   padding: 50px;
+  position: absolute;
 `;
 const Title = styled.div`
-  position: relative;
-  overflow: hidden;
-  display: flex;
-  background-image: url('mainimg6.png');
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-color: #151516;
-  border-radius: 1rem;
-  font-weight: bold;
-  border: 1px solid #fffafa;
-  height: 28%;
-  text-align: center;
-  font-size: 35px;
-  color: #2c2222;
-  line-height: 100px;
-  align-items: center;
-  flex-direction: column;
+  position: flex;
+  width: 1440px;
+  height: 793px;
+  left: 0px;
+  top: 0px;
+  background: url(mainpage.png), #d9d9d9;
   h1 {
-    padding: 100px;
+    position: absolute;
+    width: 601px;
+    height: 100px;
+    left: 810px;
+    top: 262px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 900;
     font-size: 100px;
-    animation: fadein 2s;
+    line-height: 117px;
+    color: #000000;
+    text-shadow: 2px 6px 2px #ffffff;
   }
   p {
-    animation: fadein 3s;
-    animation-duration: 4s;
+    position: absolute;
+    width: 694px;
+    height: 50px;
+    left: 755px;
+    top: 438px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 50px;
+    line-height: 59px;
+    color: #000000;
+    text-shadow: 2px 2px 2px #ffffff;
   }
   @keyframes fadein {
     from {
@@ -67,6 +75,28 @@ const Title = styled.div`
     to {
       opacity: 1;
     }
+  }
+  & button {
+    position: absolute;
+    width: 350px;
+    height: 150px;
+    left: 990px;
+    top: 550px;
+    background: #2348cd;
+
+    /* 아이디어 작성하기 */
+
+    position: absolute;
+    width: 350px;
+    height: 50px;
+    left: 1000px;
+    top: 580px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 40px;
+    line-height: 35px;
+    color: #ffffff;
   }
 `;
 const First = styled.div`
@@ -336,8 +366,10 @@ export default function Main({
         <All>
           <Title>
             <h1>Whose idea?</h1>
-
-            <p>share your idea with the world</p>
+            <p>당신의 아이디어를 보여주세요</p>
+            <Link to="/writeidea">
+              <button>아이디어 작성하기</button>
+            </Link>
           </Title>
           <MainStyle>
             <First>
