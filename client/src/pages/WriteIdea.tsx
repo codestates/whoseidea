@@ -2,61 +2,276 @@ import axios from 'axios';
 import styled from 'styled-components';
 import { useEffect } from 'react';
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 axios.defaults.withCredentials = true;
 
 const Main = styled.div`
-  .wrap {
-    width: 100%;
-    height: 150%;
-    background-image: url(back4.png);
-    background-size: cover;
-    position: absolute;
-  }
+  position: relative;
+  width: 1440px;
+  height: 2200px;
+  background: #071341;
+  margin-top: -20px;
+`;
+const Line1 = styled.div`
+  position: absolute;
+  width: 1300px;
+  height: 1px;
+  left: 89px;
+  top: 102px;
+  background: #ffffff;
+`;
+const Line2 = styled.div`
+  position: absolute;
+  width: 1300px;
+  height: 1px;
+  left: 89px;
+  top: 764px;
+  background: #ffffff;
+`;
+const Line3 = styled.div`
+  position: absolute;
+  width: 899px;
+  height: 0px;
+  left: 0px;
+  top: 220px;
+  border: 1px solid #3a5ccc;
 `;
 const MainStyle = styled.div`
-  width: 99.3%;
-  bottom: 10%;
-  height: 200px;
-  padding: 10px 10px 10px 10px;
-  background: url(back4.png);
-  font-size: 60px;
-  color: #ffff;
-  text-align: center;
+  position: relative;
+  width: 1440px;
+  color: #071341;
+
+  .head-text {
+    position: absolute;
+    width: 801px;
+    height: 100px;
+    left: 780px;
+    top: 243px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 60px;
+    line-height: 94px;
+    color: #ffffff;
+  }
+  .head-text1 {
+    position: absolute;
+    width: 794px;
+    height: 50px;
+    left: 720px;
+    top: 441px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 40px;
+    line-height: 59px;
+    color: #ffffff;
+  }
+  .back1 {
+    position: absolute;
+    width: 400px;
+    height: 453px;
+    left: 138px;
+    top: 157px;
+    background: #8fa6c9;
+    box-shadow: 0px 4px 50px rgba(0, 0, 0, 0.25);
+    border-radius: 8px;
+    z-index: 30;
+  }
+  .back2 {
+    position: absolute;
+    width: 402px;
+    height: 430px;
+    left: 196px;
+    top: 230px;
+    background: #f8f1b1;
+    box-shadow: 0px 4px 80px rgba(0, 0, 0, 0.25);
+    border-radius: 8px;
+    z-index: 20;
+  }
+  .back3 {
+    position: absolute;
+    width: 130px;
+    height: 105px;
+    left: 267px;
+    top: 271px;
+    background: #f4ff74;
+    box-shadow: 0px -11px 50px #ffffff;
+    z-index: 40;
+    border-radius: 50px 50px 50px 50px;
+  }
+  & img {
+    position: absolute;
+    width: 318px;
+    height: 318px;
+    left: 180px;
+    top: 246px;
+    filter: drop-shadow(10px 20px 50px rgba(0, 0, 0, 0.25));
+    z-index: 50;
+  }
+`;
+const Homebutton = styled.div`
+  display: flex;
+  background-color: #ffff;
+  color: black;
+  font-weight: semi-bold;
+  font-size: 40px;
+  text-decoration: none;
   align-items: center;
-  margin-left: 3%;
+  padding: 10px;
+  .home {
+    position: absolute;
+    height: 57px;
+    left: 920px;
+    right: 691px;
+    top: 50px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 24px;
+    /* or 80% */
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #ffffff;
+  }
+`;
+const Rankbutton = styled.div`
+  display: flex;
+  background-color: #ffff;
+  color: black;
+  font-weight: semi-bold;
+  font-size: 40px;
+  text-decoration: none;
+  align-items: center;
+  padding: 10px;
+  .rank {
+    position: absolute;
+    height: 57px;
+    left: 1040px;
+    right: 530px;
+    top: 50px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 24px;
+    /* or 80% */
+    display: flex;
+    align-items: center;
+    text-align: center;
+    text-decoration: none;
+    color: #ffffff;
+    .link {
+      text-decoration: none;
+      color: black;
+    }
+  }
+`;
+const Listbutton = styled.div`
+  display: flex;
+  background-color: #ffff;
+  color: black;
+  font-weight: semi-bold;
+  font-size: 40px;
+  text-decoration: none;
+  align-items: center;
+  padding: 10px;
+  .list {
+    position: absolute;
+    height: 57px;
+    left: 1150px;
+    right: 530px;
+    top: 50px;
+    width: 130px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 24px;
+    /* or 80% */
+    display: flex;
+    align-items: center;
+    text-align: center;
+    text-decoration: none;
+    color: #ffffff;
+    .link {
+      text-decoration: none;
+      color: black;
+    }
+  }
 `;
 const Containerbox = styled.div`
-  .container .container-box {
+  display: flex;
+  font-weight: semi-bold;
+  font-size: 40px;
+  text-decoration: none;
+  align-items: center;
+  color: #ffffff;
+  padding: 10px;
+  margin-left: 20px;
+  .container-box {
     position: absolute;
-    width: 600px;
-    height: 640px;
-    left: 121px;
-    top: 342px;
-    left: calc(50% - 1198px / 2 + 11px);
-    top: calc(27% - 650px / 2 + 150px);
+    width: 204px;
+    height: 67px;
+    left: 320px;
+    top: 981px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 35px;
+    line-height: 24px;
+    /* or 69% */
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #ffffff;
   }
 `;
 const BodyStyle = styled.div`
+  box-sizing: border-box;
   position: absolute;
-  width: 1200px;
-  height: 650px;
-  left: calc(50% - 1198px / 2 + 11px);
-  top: calc(38% - 650px / 2 + 150px);
-  background: url(back3.png);
-  border: 1px solid #000000;
+  width: 900px;
+  height: 880px;
+  left: 306px;
+  top: 978px;
+  /* 071341 */
+  background: linear-gradient(
+    0deg,
+    rgba(254, 250, 250, 0.2),
+    rgba(254, 250, 250, 0.2) #1f2c5c
+  );
+  border: 1px solid #3a5ccc;
   box-sizing: border-box;
   .body-title .title {
+    box-sizing: border-box;
     position: absolute;
-    width: 500px;
-    height: 50px;
-    left: 108px;
-    top: 400px;
-    font-size: 20px;
+    width: 716px;
+    height: 65px;
+    left: 292px;
+    top: 100px;
     background: #ffffff;
     border: 1px solid #000000;
-    box-sizing: border-box;
-    left: calc(105% - 1198px / 2 + 11px);
-    top: calc(30% - 650px / 2 + 150px);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 50px;
+    /* 제목을 입력해주세요 */
+    position: absolute;
+    width: 600px;
+    height: 60px;
+    left: 150px;
+    right: 150px;
+    top: 100px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 24px;
+    /* or 80% */
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #000000;
   }
   .body-write .write-text {
     position: absolute;
@@ -71,68 +286,101 @@ const BodyStyle = styled.div`
     left: calc(105% - 1198px / 2 + 11px);
     top: calc(40% - 650px / 2 + 150px);
   }
-  .body-write .write-text1 {
-    position: absolute;
-    width: 300px;
-    height: 50px;
-    left: 218px;
-    top: 432px;
-    font-size: 20px;
-    color: black;
-    background: #ffffff;
-    border: 1px solid #000000;
-    box-sizing: border-box;
-    left: calc(105% - 1198px / 2 + 11px);
-    top: calc(107% - 650px / 2 + 150px);
-  }
   .file {
     position: absolute;
-    width: 220px;
-    height: 50px;
-    left: 218px;
-    top: 432px;
-    font-size: 20px;
-    background-color: #ff90ff;
-    color: black;
-    text-align: right;
-    align-items: center;
+    width: 320px;
+    height: 61px;
+    left: 170px;
+    top: 528px;
     background: #ffffff;
-    border: 1px solid #000000;
-    box-sizing: border-box;
+    border-radius: 20px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 24px;
+    /* or 80% */
+    align-items: center;
+    text-align: center;
+    color: #000000;
     input[type='file'] {
       position: absolute;
-      width: 0;
-      height: 0;
-      padding: 0;
-      margin: -1px;
-      overflow: hidden;
-      clip: rect(0, 0, 0, 0);
-      border: 0;
+      width: 300px;
+      height: 61px;
+      left: 170px;
+      top: 528px;
+      background: #ffffff;
+      border-radius: 50px;
+      font-family: 'Inter';
+      font-style: normal;
+      font-weight: 700;
+      font-size: 30px;
+      line-height: 24px;
+      /* or 80% */
+      align-items: center;
+      text-align: center;
+      color: #000000;
     }
-    left: calc(128% - 1198px / 2 + 11px);
-    top: calc(107% - 650px / 2 + 150px);
   }
-  .main-text .maintext {
-    position: absolute;
-    width: 500px;
-    height: 356px;
-    left: 221px;
-    top: 484px;
-    font-size: 20px;
-    left: calc(105% - 1198px / 2 + 11px);
-    top: calc(50% - 650px / 2 + 150px);
-    background: #ffffff;
-    border: 1px solid #000000;
+  .main-text {
     box-sizing: border-box;
-  }
-  .button {
     position: absolute;
-    width: 300px;
+    width: 750px;
+    height: 509px;
+    left: 75px;
+    right: 75px;
+    top: 30%;
+    background: #ffffff;
+    border: 1px solid #3a5ccc;
+    /* 내용을 입력해 주세요 */
+  }
+  .maintext1 {
+    box-sizing: border-box;
+    width: 750px;
+    height: 509px;
+    left: 75px;
+    right: 75px;
+    top: 30%;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 24px;
+    /* or 80% */
+    display: flex;
+    align-items: center;
+    text-align: left;
+    color: #000000;
+    top: 10px;
+    background: #ffffff;
+    border: 1px solid #3a5ccc;
+  }
+  & button {
+    position: absolute;
+    width: 172px;
+    height: 61px;
+    left: 570px;
+    top: 528px;
+    background: #ffffff;
+    border-radius: 50px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 24px;
+    margin-top: 10px;
+    /* or 80% */
+    align-items: center;
+    text-align: center;
+    color: #000000;
+  }
+  & img {
+    position: absolute;
+    width: 50px;
     height: 50px;
-    background-color: #ffff;
-    font-size: 20px;
-    left: calc(114% - 1198px / 2 + 11px);
-    top: calc(116% - 650px / 2 + 150px);
+    left: 423px;
+    top: 535px;
+    z-index: 30;
   }
 `;
 export default function WriteIdea() {
@@ -197,75 +445,88 @@ export default function WriteIdea() {
   return (
     <Main>
       <div className="main">
-        <div className="wrap">
-          <MainStyle>
-            <div className="head-container">
-              <div className="container-text">
-                <h2>아이디어를 작성해 주세요</h2>
-              </div>
-              <BodyStyle>
-                <div className="body" />
-                <div className="body-title">
-                  <span>
-                    <Containerbox>
-                      <div className="container">
-                        <div className="contianer-box"></div>
-                        <img src="back6.png" className="container-box"></img>
-                      </div>
-                    </Containerbox>
-                    <input
-                      type="text"
-                      className="title"
-                      placeholder="제목을 입력해주세요"
-                      onChange={e => handleInputValue('caption', e)}
-                      name="title"
-                    ></input>
-                  </span>
+        <MainStyle>
+          <div>
+            <Line1></Line1>
+          </div>
+          <div>
+            <Line2></Line2>
+          </div>
+          <div className="head-text">
+            <h2>Whose idea?</h2>
+          </div>
+          <span className="back1"></span>
+          <span className="back2"></span>
+          <span className="back3"></span>
+          <div className="head-text1">
+            <h2>아이디어를 작성해 주세요</h2>
+          </div>
+          <img src="led.png" />
+        </MainStyle>
+        <Homebutton>
+          <Link to="/">
+            <div className="home">Home</div>
+          </Link>
+        </Homebutton>
+        <Rankbutton>
+          <Link to="/rank">
+            <div className="rank">Rank</div>
+          </Link>
+        </Rankbutton>
+        <Listbutton>
+          <Link to="/idealist">
+            <div className="list">Idea list</div>
+          </Link>
+        </Listbutton>
+        <BodyStyle>
+          <div className="body" />
+          <div className="body-title">
+            <span>
+              <Containerbox>
+                <div className="container">
+                  <span className="contianer-box">New Idea</span>
                 </div>
-                <div className="body-write">
-                  <div className="writer">
-                    <span>
-                      <input
-                        type="text"
-                        className="write-text"
-                        value={nickname}
-                      ></input>
-                    </span>
-                  </div>
-                  <div className="main-text">
-                    <span>
-                      <textarea
-                        className="maintext"
-                        placeholder="내용을 입력해 주세요"
-                        onChange={e => handleInputValue('context', e)}
-                      ></textarea>
-                      <input
-                        className="write-text1"
-                        placeholder="첨부파일"
-                        value={filename}
-                      ></input>
-                      <div>
-                        <button
-                          className="button"
-                          type="button"
-                          onClick={() => handlePost()}
-                        >
-                          확인
-                        </button>
-                      </div>
-                      <input
-                        type="file"
-                        className="file"
-                        accept="image/*"
-                        onChange={event => handleFileInput(event)}
-                      />
-                    </span>
-                  </div>
-                </div>
-              </BodyStyle>
+              </Containerbox>
+              <input
+                type="text"
+                className="title"
+                placeholder="제목을 입력해주세요"
+                onChange={e => handleInputValue('caption', e)}
+                name="title"
+              ></input>
+            </span>
+          </div>
+          <div className="body-write">
+            <div>
+              <Line3></Line3>
             </div>
-          </MainStyle>
-        </div>
+            <div className="main-text">
+              <span>
+                <textarea
+                  className="maintext1"
+                  placeholder="내용을 입력해 주세요"
+                  onChange={e => handleInputValue('context', e)}
+                ></textarea>
+                <div>
+                  <button
+                    className="button1"
+                    type="button"
+                    onClick={() => handlePost()}
+                  >
+                    확인
+                  </button>
+                </div>
+                <img src="file.png" />
+                <input
+                  type="file"
+                  className="file"
+                  accept="image/*"
+                  onChange={event => handleFileInput(event)}
+                />
+              </span>
+            </div>
+          </div>
+        </BodyStyle>
       </div>
     </Main>
   );
