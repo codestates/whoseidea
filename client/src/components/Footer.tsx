@@ -7,7 +7,7 @@ const All = styled.div`
   background-color: #f0ffff;
   height: 450px;
   align-items: center;
-  margin-top: 12%;
+  margin-top: 40%;
 `;
 const Member = styled.div`
   color: #6d0202;

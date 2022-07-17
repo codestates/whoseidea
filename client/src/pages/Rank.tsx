@@ -4,14 +4,30 @@ import Login from '../components/Login';
 import styled from 'styled-components';
 import RankList from '../components/RankList';
 import { useMediaQuery } from 'react-responsive';
+
+const All = styled.div`
+  position: relative;
+  width: 1440px;
+  height: 1800px;
+  background: #ffffff;
+`;
+const Body = styled.div`
+  position: absolute;
+  width: 1000px;
+  height: 1941px;
+  left: 253px;
+  top: 121px;
+  background: #f1fcff;
+`;
 const Title = styled.div`
   font-weight: bold;
-  font-size: 100px;
+  font-size: 60px;
   text-align: center;
   position: absolute;
   color: #051225;
   border-radius: 1rem;
-  left: 25%;
+  left: 32%;
+  top: 3%;
   font-family: 'Courier New', Courier, monospace;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25))
     drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25))
@@ -44,22 +60,26 @@ export default function Rank() {
   });
   return (
     <div>
-      {isPc ? (
-        <div>
-          <Title>
-            <div>최고의 아이디어</div>
-          </Title>
-          <RankList />
-        </div>
-      ) : (
-        <div>
-          <TitleM>
-            <div>최고의 아이디어</div>
-          </TitleM>
-          <RankList />
-        </div>
-      )}
-      {check ? <Login /> : null}
+      <All>
+        <Body>
+          {isPc ? (
+            <div>
+              <Title>
+                <div>최고의 아이디어</div>
+              </Title>
+              <RankList />
+            </div>
+          ) : (
+            <div>
+              <TitleM>
+                <div>최고의 아이디어</div>
+              </TitleM>
+              <RankList />
+            </div>
+          )}
+          {check ? <Login /> : null}
+        </Body>
+      </All>
     </div>
   );
 }
