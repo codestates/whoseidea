@@ -5,13 +5,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 axios.defaults.withCredentials = true;
 
-const Main = styled.div`
-  position: relative;
-  width: 1440px;
-  height: 2200px;
-  background: #071341;
-  margin-top: -20px;
-`;
+const Main = styled.div``;
 const Line1 = styled.div`
   position: absolute;
   width: 1300px;
@@ -39,7 +33,9 @@ const Line3 = styled.div`
 const MainStyle = styled.div`
   position: relative;
   width: 1440px;
-  color: #071341;
+  height: 2200px;
+  background: #071341;
+  top: 1px;
 
   .head-text {
     position: absolute;
