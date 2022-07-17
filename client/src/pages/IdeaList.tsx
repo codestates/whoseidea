@@ -7,59 +7,82 @@ import { useMediaQuery } from 'react-responsive';
 axios.defaults.withCredentials = true;
 
 const Main = styled.div`
-  .wrap {
-    width: 100%;
-    height: 100%;
-
-    background-size: cover;
-    position: absolute;
-  }
+  position: relative;
+  width: 1440px;
+  height: 1976px;
+  background: #fbf9f2;
 `;
 const Title = styled.div`
   position: absolute;
-  display: flex;
-  top: 10%;
-  left: 10%;
-  right: 2%;
-  align-items: center;
-  font-size: 25px;
+  left: 500px;
+  top: 80px;
+  width: 700px;
+  font-family: 'Anton';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 50px;
+  line-height: 160px;
+  /* identical to box height, or 160% */
+  letter-spacing: -0.01em;
+  color: #2f4baa;
+  text-shadow: 4px 4px 4px #f8f1b1;
 `;
 
 const MainStyle = styled.div`
   position: absolute;
-  width: 150vh;
-  height: 2000px;
-  left: 109px;
-  top: 100px;
-  background: #fffbfe;
+  width: 1200px;
+  height: 465px;
+  left: 126px;
+  top: 78px;
+  background: #dbeef6;
   border-radius: 10px;
 `;
 const HeaderContainer = styled.div`
-  position: absolute;
-  width: 75%;
-  height: 200px;
-  left: 2%;
-  top: 10px;
-  background: url(header.png);
-  border-radius: 10px;
+  .back1 {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    left: 80px;
+    top: 130px;
+    background: #fef4c3;
+    box-shadow: 0px 4px 50px rgba(0, 0, 0, 0.25);
+    border-radius: 8px;
+    z-index: 20;
+  }
+  .back2 {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    left: 120px;
+    top: 90px;
+    background: #798ba5;
+    box-shadow: 0px 4px 50px rgba(0, 0, 0, 0.25);
+    border-radius: 8px;
+    z-index: 30;
+  }
+  .back3 {
+    position: absolute;
+    width: 125px;
+    height: 100px;
+    left: 210px;
+    top: 125px;
+    background: #f4ff74;
+    box-shadow: 0px -11px 50px #ffffff;
+    z-index: 40;
+    border-radius: 50px 50px 50px 50px;
+  }
+  & img {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    left: 130px;
+    top: 100px;
+    background: url(LED-Bulb-PNG-Transparent.png);
+    filter: drop-shadow(10px 20px 50px rgba(0, 0, 0, 0.25));
+    z-index: 50;
+  }
 `;
-const HeaderContainertext = styled.div`
-  position: absolute;
-  width: 80%;
-  height: 125px;
-  left: 10%;
-  top: 20%;
-  text-shadow: 2px 6px 2px #4b4b49;
-  font-family: 'Inter';
-  font-style: normal;
-  font-weight: 700;
-  font-size: 50px;
-  line-height: 48px;
-  display: flex;
-  align-items: center;
-  text-align: center;
-  color: #ffffff;
-`;
+const HeaderContainertext = styled.div``;
 const HeaderContainertext1 = styled.div`
   position: absolute;
   width: 85%;
@@ -77,24 +100,27 @@ const HeaderContainertext1 = styled.div`
   color: #000000;
 `;
 
-const HeaderContainer1 = styled.div`
-  position: absolute;
-  width: 20%;
-  height: 200px;
-  right: 2%;
-  top: 10px;
-  background: url(header3.png);
-  border-radius: 10px;
-`;
+const HeaderContainer1 = styled.div``;
 
 const Title2 = styled.div`
-  margin-left: 92%;
-  font-size: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 24px 10px 16px;
+  gap: 8px;
+
   position: relative;
-  margin-top: 13%;
-  margin-bottom: 0.5%;
-  align-items: stretch;
-  font-size: 20px;
+  width: 315px;
+  height: 59px;
+
+  background: #2348cd;
+  border: 1px solid #fbf1b1;
+  /* M3/Elevation Light/1 */
+
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.3),
+   0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+  border-radius: 100px;
 `;
 const Ideabox = styled.div`
   .container .card-content {
@@ -111,8 +137,8 @@ const Ideabox = styled.div`
     grid-template-rows: 1fr 1fr 1fr;
     grid-row-gap: 50px;
     grid-column-gap: 50px;
-    margin-left: 20%;
-    margin-top: 10%;
+    margin-left: 15%;
+    margin-top: 32%;
     text-align: center;
     background-position: center;
     border: 2px solid #000000;
@@ -209,7 +235,7 @@ const MobileIdeabox = styled.div`
     position: static;
     width: 250px;
     height: 200px;
-    left: 0px;
+    left: 10px;
     top: 0px;
     flex: none;
     order: 0;
@@ -342,16 +368,18 @@ export default function IdeaList({ handleToView }: UserProps) {
             <MainStyle>
               <Title>
                 <div>
-                  <h1>Newest</h1>
+                  <h1>Whose idea?</h1>
                 </div>
               </Title>
               <div>
                 <HeaderContainer>
                   <div className="header-container" />
+                  <span className="back1"></span>
+                  <span className="back2"></span>
+                  <span className="back3"></span>
+                  <img src="led.png" />
                   <HeaderContainertext>
-                    <div className="headercontainertext">
-                      당신의 아이디어를 보여주세요
-                    </div>
+                    <div className="headercontainertext"></div>
                   </HeaderContainertext>
                 </HeaderContainer>
                 <div className="container" />
@@ -360,7 +388,6 @@ export default function IdeaList({ handleToView }: UserProps) {
                     <div className="header-container" />
                     <div className="container" />
                     <div className="headercontainertext1">
-                      {' '}
                       아이디어 작성하기
                     </div>
                   </HeaderContainertext1>
@@ -370,7 +397,7 @@ export default function IdeaList({ handleToView }: UserProps) {
                 <Title2>
                   <div className="container">
                     <Link to="/writeidea">
-                      <img src="add.png"></img>
+                     <button>아이디어 작성하기</button>
                     </Link>
                   </div>
                 </Title2>

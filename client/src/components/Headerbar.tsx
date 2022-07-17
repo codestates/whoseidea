@@ -7,14 +7,14 @@ import { Link } from 'react-router-dom';
 import Googlelogout from './Googlelogout';
 
 const Sidebar = styled.div`
-  display: flex;
+  /* display: flex;
   background-color: #ffff;
   color: black;
   font-weight: semi-bold;
   font-size: 40px;
   text-decoration: none;
   align-items: center;
-  padding: 10px;
+  padding: 10px; */
 `;
 const Homebutton = styled.div`
   display: flex;

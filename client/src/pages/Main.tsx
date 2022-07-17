@@ -22,7 +22,7 @@ const All = styled.div`
 `;
 
 const MainStyle = styled.div`
-  background-color: #fffafa;
+  background-color: #f1fcff;
   font-weight: bold;
   text-align: center;
   font-size: 1rem;
@@ -30,14 +30,16 @@ const MainStyle = styled.div`
   display: flex;
   height: 500px;
   justify-content: space-between;
+  margin-top: 30px;
+  margin-left: 30px;
   padding: 50px;
-  position: absolute;
+  width: 1300px;
 `;
 const Title = styled.div`
   position: flex;
   width: 1440px;
   height: 793px;
-  left: 0px;
+  left: 10px;
   top: 0px;
   background: url(mainpage.png), #d9d9d9;
   h1 {
@@ -78,7 +80,7 @@ const Title = styled.div`
   }
   & button {
     position: absolute;
-    width: 350px;
+    width: 400px;
     height: 150px;
     left: 990px;
     top: 550px;
@@ -94,63 +96,76 @@ const Title = styled.div`
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 900;
-    font-size: 40px;
+    font-size: 35px;
     line-height: 35px;
     color: #ffffff;
   }
 `;
 const First = styled.div`
-  border: 3px solid black;
-  border-radius: 1rem;
-  color: white;
-  background-image: url('아인슈타인.png');
-  background-repeat: no-repeat;
-  background-size: cover;
-  :hover {
-    transform: scale(1.2, 1.2);
-    transition: 0.5s;
-    background-color: blue;
+  & img {
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    left: 250px;
+    top: 946px;
+    filter: drop-shadow(10px 20px 50px rgba(0, 0, 0, 0.25));
+    z-index: 50;
+  }
+  .back {
+    position: absolute;
+    width: 402px;
+    height: 350px;
+    left: 196px;
+    top: 1050px;
+    background: #f8f1b1;
+    box-shadow: 0px 4px 80px rgba(0, 0, 0, 0.25);
+    border-radius: 8px;
+    z-index: 20;
   }
 `;
-const Second = styled.div`
-  border: 3px solid none;
-  border-radius: 1rem;
-  color: #ffffff;
-  background-image: url('햇빛.jpg');
-  background-repeat: no-repeat;
-  background-size: cover;
-  :hover {
-    transform: scale(1.2, 1.2);
-    transition: 0.5s;
-    background-color: blue;
-  }
-`;
+// const Second = styled.div`
+//   border: 3px solid none;
+//   border-radius: 1rem;
+//   color: #ffffff;
+//   background-image: url('');
+//   background-repeat: no-repeat;
+//   background-size: cover;
+//   :hover {햇빛.jpg
+//     transform: scale(1.2, 1.2);
+//     transition: 0.5s;
+//     background-color: blue;
+//   }
+// `;
 const Third = styled.div`
   border: 3px solid none;
   border-radius: 1rem;
   color: #0f1a11;
-  background-image: url('공유.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: -200px 0px;
-
-  :hover {
+  margin-top: 120px;
+  left: 50px;
+  text-align: left;
+  /* :hover {
     transform: scale(1.2, 1.2);
     transition: 0.5s;
     background-color: blue;
-  }
+  } */
 `;
 const Container = styled.div`
   position: relative;
-  top: 50px;
+  top: 5px;
   display: flex;
-  width: 100%;
-  background-color: #ffffff;
+  background-color: #f1fcff;
+  width: 1410px;
+  border-radius: 20px;
+  left: 20px;
 `;
 const PositionContainer = styled.div`
   background-repeat: no-repeat;
   padding: 50px;
-  width: 60%;
+  width: 700px;
+  left: 5px;
   position: relative;
   overflow: hidden; // 선을 넘어간 이미지들은 보이지 않도록 처리합니다.
 `;
@@ -158,12 +173,11 @@ const PositionContainer = styled.div`
 const Next = styled.button`
   position: absolute;
   top: 80%;
-  left: 70%;
+  left: 80%;
   border: 1px solid coral;
   font-weight: bold;
   padding: 0.5em 2em;
   color: coral;
-
   border-radius: 10px;
   background-color: black;
   &:hover {
@@ -175,7 +189,6 @@ const Next = styled.button`
 const Prev = styled.button`
   position: absolute;
   top: 80%;
-
   border: 1px solid coral;
   padding: 0.5em 2em;
   color: coral;
@@ -193,23 +206,77 @@ const SliderContainer = styled.div`
   display: flex; //이미지들을 가로로 나열합니다.
 `;
 const TextContainer = styled.div`
-  background-color: #000000;
   border-radius: 1rem;
-  margin-top: 50px;
   height: 550px;
-  color: white;
+  color: #000000;
   font-weight: bold;
-  font-size: x-large;
-
+  font-size: 30px;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
     'Lucida Sans', Arial, sans-serif;
   text-shadow: 2px 2px 0px #bdbdbd;
+  z-index: 100;
+  margin-left: 35px;
+  .header1 {
+    font-family: 'Anton';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 160px;
+    /* identical to box height, or 121% */
+    letter-spacing: -0.01em;
+    color: #313131;
+    margin-left: -10px;
+    text-align: center;
+  }
+  .header2 {
+    font-family: 'Anton';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 35px;
+    line-height: 160px;
+    /* identical to box height, or 121% */
+    letter-spacing: -0.01em;
+    color: #313131;
+    margin-left: 50px;
+  }
+  .header3 {
+    font-family: 'Anton';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 35px;
+    line-height: 160px;
+    /* identical to box height, or 121% */
+    letter-spacing: -0.01em;
+    color: #313131;
+    margin-left: 70px;
+    text-align: center;
+  }
+  .back4 {
+    margin-left: 10px;
+    text-align: center;
+  }
   & button {
     position: relative;
-    left: 10%;
-    width: 70%;
-    top: 10%;
-    height: 100px;
+    left: 180px;
+    width: 200px;
+    top: 60px;
+    height: 80px;
+    border-radius: 1rem;
+    font-size: xx-large;
+    font-weight: bold;
+    background-color: #e0d424;
+    :hover {
+      background-color: #c72121;
+      transition: 0.5s;
+      cursor: pointer;
+    }
+  }
+  .button2 {
+    position: relative;
+    left: 220px;
+    width: 200px;
+    top: 50px;
+    height: 80px;
     border-radius: 1rem;
     font-size: xx-large;
     font-weight: bold;
@@ -226,17 +293,16 @@ const IdeaContainer = styled.div`
   background-image: url('mainbulbs.png');
   background-repeat: no-repeat;
   background-size: cover;
-
   border-radius: 1rem;
   font-weight: bold;
-  margin-top: 100px;
+  margin-top: 1000px;
 `;
 const ChatContainer = styled.div`
   background-color: #9ca19c;
   border-radius: 1rem;
   font-weight: bold;
   display: flex;
-  margin-top: 100px;
+  margin-top: 1000px;
 `;
 const MobileContainer = styled.div`
   position: absolute;
@@ -373,23 +439,22 @@ export default function Main({
           </Title>
           <MainStyle>
             <First>
-              <h1>세상의 모든 아인슈타인분들에게..</h1>
-
-              <p>
-                <div>지금 무슨 생각을 하고 계신가요?</div>
-              </p>
+              {/* <h1>세상의 모든 아인슈타인분들에게..</h1> */}
+              <span className="back"></span>
+              <img src="햇빛.jpg" />
             </First>
-            <Second>
+            {/* <Second>
               <h1>한숨 푹 자고 일어난 아침..</h1>
               <p>
                 <div>머리속에 번쩍 아이디어가 떠오르신적 있으신가요?</div>
               </p>
-            </Second>
+            </Second> */}
             <Third>
-              <h1>세상을 바꿀 단 하나의 아이디어</h1>
               <p>
-                <div>그 소중한 아이디어를 그냥 지나쳐서 잊어먹지 마시고</div>
-                <div>저희 Whose Idea 에 공유해주세요!</div>
+                <h1>한숨 푹 자고 일어난 아침..</h1>
+                <h1>머리속에 번쩍 아이디어가 떠오르신적 있으신가요?</h1>
+                <h1>그 소중한 아이디어를 그냥 지나쳐서 잊어먹지 마시고</h1>
+                <h1>저희 Whose Idea 에 공유해주세요!</h1>
               </p>
             </Third>
           </MainStyle>
@@ -405,11 +470,13 @@ export default function Main({
             </PositionContainer>
             {currentSlide === 0 ? (
               <TextContainer>
-                <h2>갑자기 생각난 독특한 아이디어가 있으신가요?</h2>
+                <h2 className="header1">
+                  갑자기 생각난 독특한 아이디어가 있으신가요?
+                </h2>
                 <ul>당신도 최고의 아이디어가 될 수 있습니다!</ul>
                 <ul>하나밖에 없는 당신의 아이디어를 써보세요!</ul>
                 {isgooglelogin || islogincheck ? (
-                  <Link to="/idealist">
+                  <Link to="/">
                     <button>시작하기</button>
                   </Link>
                 ) : (
@@ -421,7 +488,7 @@ export default function Main({
             ) : null}
             {currentSlide === 1 ? (
               <TextContainer>
-                <h2>최고의 아이디어를 보고 싶으신가요?</h2>
+                <h2 className="header2">최고의 아이디어를 보고 싶으신가요?</h2>
                 <ul>가장 인기있는 아이디어를 볼 수 있습니다!</ul>
                 <ul>유저들의 기발한 아이디어를 구경해보세요!</ul>
                 {isgooglelogin || islogincheck ? (
@@ -437,13 +504,15 @@ export default function Main({
             ) : null}
             {currentSlide === 2 ? (
               <TextContainer>
-                <h2>아이디어를 활용하고 싶으신가요?</h2>
-                <ul>해당 유저에게 쪽지를 보내보세요!</ul>
-                <ul>당신의 쪽지를 수많은 사람들이 기다립니다!</ul>
-                <ul>일단 아이디어를 구경하러 가볼까요?</ul>
+                <h2 className="header3">아이디어를 활용하고 싶으신가요?</h2>
+                <ul className="back4">해당 유저에게 쪽지를 보내보세요!</ul>
+                <ul className="back4">
+                  당신의 쪽지를 수많은 사람들이 기다립니다!
+                </ul>
+                <ul className="back4">일단 아이디어를 구경하러 가볼까요?</ul>
                 {isgooglelogin || islogincheck ? (
                   <Link to="/idealist">
-                    <button>구경하기</button>
+                    <button className="button2">구경하기</button>
                   </Link>
                 ) : (
                   <Link to="/">
